@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "**/app/application/app.css": "tailwindcss"
+  },
+  "[typescriptreact]": {
+    "editor.quickSuggestions": {
+      "strings": "on"
+    }
+  },
+  "[typescript]": {
+    "editor.quickSuggestions": {
+      "strings": "on"
+    }
+  }
+}
