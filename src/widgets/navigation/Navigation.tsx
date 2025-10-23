@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Button } from "~/shared/ui/button/button";
 import { useTheme } from "~/shared/hooks"; // Обновлено
 
