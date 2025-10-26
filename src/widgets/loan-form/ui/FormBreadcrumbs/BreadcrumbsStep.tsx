@@ -16,7 +16,7 @@ export const BreadcrumbsStep = ({
   }
   if (isClickable) {
     return (
-      <BreadcrumbLink asChild className="text-white">
+      <BreadcrumbLink asChild>
         <Link to={step.path}>{step.title}</Link>
       </BreadcrumbLink>
     );
