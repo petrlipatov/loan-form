@@ -1,0 +1,1 @@
+export { useWorkPlaces } from "./api";
