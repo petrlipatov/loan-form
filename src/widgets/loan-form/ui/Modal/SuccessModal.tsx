@@ -18,7 +18,7 @@ export const SuccessModal = ({ isOpen, onClose, data }: SuccessModalProps) => {
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose} title="Заявка успешно отправлена!">
-      Поздравляем, {data.lastName} {data.firstName}. Вам одобрена{" "}
+      Поздравляем, {data.lastName} {data.firstName}. Вам одобрено{" "}
       ${data.loanAmount} на {data.loanTerm} дней.
     </Modal>
   );
