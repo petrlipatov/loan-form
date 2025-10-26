@@ -14,9 +14,10 @@ interface NavigationButtonsProps {
   next?: string;
   fields?: FormFields[];
   isSubmit?: boolean;
+  isDisabled?: boolean;
 }
 
-export const NavigationButtons = ({ back, next, fields, isSubmit }: NavigationButtonsProps) => {
+export const NavigationButtons = ({ back, next, fields, isSubmit, isDisabled }: NavigationButtonsProps) => {
   const { isSubmitting } = useOutletContext<{ isSubmitting: boolean }>();
   const { trigger } = useFormContext();
   const navigate = useNavigate();
@@ -42,14 +43,14 @@ export const NavigationButtons = ({ back, next, fields, isSubmit }: NavigationBu
   return (
     <CardFooter className="flex justify-between px-0 pt-6">
       {back ? (
-        <Button type="button" variant="outline" onClick={handleBack}>
+        <Button type="button" variant="outline" onClick={handleBack} disabled={isDisabled}>
           Назад
         </Button>
       ) : (
         <div />
       )}
       {next && (
-        <Button type="button" onClick={handleNext} className="group">
+        <Button type="button" onClick={handleNext} className="group" disabled={isDisabled}>
           Далее
           <ArrowRight
             className="
@@ -60,7 +61,7 @@ export const NavigationButtons = ({ back, next, fields, isSubmit }: NavigationBu
         </Button>
       )}
       {isSubmit && (
-        <Button type="submit" className="group" disabled={isSubmitting}>
+        <Button type="submit" className="group" disabled={isDisabled || isSubmitting}>
           {isSubmitting ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (

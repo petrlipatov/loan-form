@@ -10,7 +10,7 @@ import {
 } from "~/shared/ui/form/Form";
 import { Slider } from "~/shared/ui/slider";
 
-export const LoanAmountField = () => {
+export const LoanAmountField = ({ isDisabled }: { isDisabled?: boolean }) => {
   const { control, watch } = useFormContext();
   const loanAmount = watch(FormFields.LoanAmount);
 
@@ -28,6 +28,7 @@ export const LoanAmountField = () => {
               step={100}
               onValueChange={(value) => field.onChange(value[0])}
               defaultValue={[field.value]}
+              disabled={isDisabled}
             />
           </FormControl>
           <FormMessage />

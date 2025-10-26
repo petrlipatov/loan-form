@@ -15,6 +15,7 @@ import { useFormSteps, useFormPersistence } from "~/shared/hooks";
 import { Skeleton } from "~/shared/ui/skeleton/Skeleton";
 import { SuccessModal } from "./Modal";
 import { FormHeader } from "./FromHeader";
+import { type LoanFormOutletContext } from "~/shared/types/loan-form";
 
 export const LoanFormWidget = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,7 +73,7 @@ export const LoanFormWidget = () => {
               "
             />
           ) : (
-            <Outlet context={{ isSubmitting: mutation.isPending }} />
+            <Outlet context={{ isSubmitting: mutation.isPending } as LoanFormOutletContext} />
           )}
         </CardContent>
       </Card>
