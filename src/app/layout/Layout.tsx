@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { Navigation } from "~/widgets/navigation";
+import { NavigationWidget } from "~/widgets/navigation";
 
 export function Layout() {
   return (
     <>
-      <Navigation />
+      <NavigationWidget />
       <Outlet />
     </>
   );
